@@ -15,7 +15,7 @@ int timeTo = 5000;
 void setup() {                
   pinMode(Relay, OUTPUT);  
   pinMode(rainPin, INPUT);
-  pinMode(A0, INPUT);  // к входу A0 подключим датчик (англ. «intput»)
+  pinMode(A4, INPUT);
   Serial.begin(9600);  
 }
 
@@ -30,9 +30,9 @@ void loop() {
   if(sensorValue < thresholdValue){
 //    Serial.println(" - не потрібно поливати");  
   }else if(water > 685) {
-      digitalWrite(Relay, HIGH);   // реле включено
+      digitalWrite(Relay, HIGH);
       delay(timeTo);
-      digitalWrite(Relay, LOW);   // реле виключено
+      digitalWrite(Relay, LOW);
   }
   delay(500);
               
